@@ -1,0 +1,275 @@
+[Adblock Plus 2.0]
+! Title: Nepali Adblock Filter
+! Description: Ad and tracker blocking filter for Nepali websites. Works with uBlock Origin, AdGuard, and Pi-hole.
+! Version: 1.0.0
+! Last modified: 2026-03-15
+! Expires: 7 days (update frequency)
+! Homepage: https://github.com/karanmahato44/filterlist-np
+! License: MIT
+!
+! How to use:
+!   uBlock Origin: Subscribe to the raw GitHub URL
+!   Pi-hole: Add the raw GitHub URL as an adlist (only ||domain^ rules will apply)
+
+! ===== AD NETWORKS & TRACKERS (blocked by both Pi-hole and uBlock) =====
+||adalytics.prixacdn.net^
+||adsnetwork.hamropatro.com^
+||bigyapan.hamropatro.com^
+||creative.hamropatro.com^
+||admana.net^
+||lktcdn.prixacdn.net^
+||nepalkhabar.prixacdn.net^
+||annapurnapost.prixacdn.net^
+
+! ===== GLOBAL COSMETIC FILTERS (uBlock only) =====
+##div[class*="bigyapan"]
+##div[class*="bigyaapan"]
+##.adalytics_ad
+
+! ===== AD IMAGE/RESOURCE BLOCKS (uBlock only - path-based) =====
+||*/bigyapan/*$image
+||*/bigyaapan/*$image
+
+! ===== SITE-SPECIFIC RULES =====
+
+! --- setopati.com ---
+www.setopati.com##.mast-head.col-md-12
+www.setopati.com###inner-jacket
+www.setopati.com##.mobile-fixed-ad
+
+! --- onlinekhabar.com ---
+||www.nepalhomes.com/*.html$subdocument
+||onlinekhabar.com/wp-content/uploads/*.gif
+www.onlinekhabar.com##.ok_roadblock
+www.onlinekhabar.com##div[class*="-ad"]
+www.onlinekhabar.com###ok-box-ad-wrap
+www.onlinekhabar.com##.okam-each-ad
+www.onlinekhabar.com##.ok18-single-post-content-wrap > div.single-inbetween-stories
+english.onlinekhabar.com##.add__fullwidth
+
+! --- ekantipur.com ---
+||assets-cdn.kantipurdaily.com^
+||assets-cdn.ekantipur.com/uploads/source/ads/*$image
+||election.ekantipur.com/sponsored/
+ekantipur.com##div.kdaily-high-ad
+ekantipur.com###roadblock-ad
+ekantipur.com##.daraz-sponser
+ekantipur.com##article.sponsored.normal
+ekantipur.com##.sticky--bottom
+ekantipur.com##.static-sponsor
+ekantipur.com##.box-sponsored
+ekantipur.com##.sponsor-mobile
+ekantipur.com##.categorized_spons
+ekantipur.com##.js_smartbanner
+
+! --- pahilopost.com ---
+||pahilopost.com/assets/upload/headbanner/*$image
+||pahilopost.com/assets/upload/midadvertise/*$image
+pahilopost.com##div.uk-container-center.uk-container:nth-of-type(10) > .uk-hidden-small.uk-thumbnail-expand.pahilo-shadow-box > .uk-thumbnail-expand.uk-thumbnail
+pahilopost.com##div.uk-container-center.uk-container:nth-of-type(14) > .uk-hidden-small.uk-thumbnail-expand.pahilo-shadow-box > .uk-thumbnail-expand.uk-thumbnail
+
+! --- nepalkhabar.com ---
+||nepalkhabar.prixacdn.net/media/*.gif$image
+||nepalkhabar.prixacdn.net/media/advertisements/*$image
+nepalkhabar.com##.nk-sidebar-ads
+
+! --- goalnepal.com ---
+||goalnepal.com/uploads/banners/*$image
+goalnepal.com###wrapper > .adbox.section
+goalnepal.com##.above-news.adbox.section
+
+! --- baahrakhari.com ---
+baahrakhari.com##.cube-boxs
+
+! --- annapurnapost.com ---
+||annapurnapost.prixacdn.net/media/advert/*$image
+annapurnapost.com##div.advertisement
+
+! --- gorkhapatraonline.com ---
+||gorkhapatraonline.com/charity_image/*$image
+gorkhapatraonline.com##div.adds
+
+! --- neplays.com ---
+||neplays.com/img/ads-img/*$image
+
+! --- hamrokhelkud.com ---
+||www.hamrokhelkud.com/wp-content/uploads/*.gif$image
+
+! --- nepalitimes.com ---
+||www.nepalitimes.com/wp-content/*.gif$image
+
+! --- techlekh.com ---
+techlekh.com##div[id$="_ad"]
+
+! --- ratopati.com ---
+www.ratopati.com##.adv-item
+
+! --- dcnepal.com ---
+www.dcnepal.com##.gam-each-ad
+
+! --- wicketnepal.com ---
+||admana.net/imp$image
+
+! --- khelpati.com ---
+||khelpati.com/images/*.gif
+
+! --- nepalpress.com ---
+nepalpress.com##.gam-each-npad
+www.nepalpress.com##.is-full-widescreen-ad
+
+! --- sharesansar.com ---
+www.sharesansar.com##.advsTrack
+
+! --- lokaantar.com ---
+lokaantar.com##.bottomStickAd
+www.lokaantar.com,lokaantar.com##.paraAd
+www.lokaantar.com,lokaantar.com##.ad-banner
+||lktcdn.prixacdn.net/media/*.gif$image
+
+! --- osnepal.com ---
+www.osnepal.com##.ads
+
+! --- hamropatro.com ---
+||creative.hamropatro.com/img/*$image
+||adsnetwork.hamropatro.com^
+||bigyapan.hamropatro.com/parchar/*$subdocument
+
+! --- gadgetbytenepal.com ---
+www.gadgetbytenepal.com###darazAd
+www.gadgetbytenepal.com##img[alt*="Ad"]
+www.gadgetbytenepal.com##div[id*="_ad"]
+
+! --- prasashan.com ---
+www.prasashan.com##section.widget img
+
+! --- ujyaaloonline.com ---
+ujyaaloonline.com##.ad
+
+! --- mediadabali.com ---
+mediadabali.com##.ads
+
+! --- reportersnepal.com ---
+www.reportersnepal.com##.widget > a > img
+
+! --- khabarhub.com ---
+||khabarhub.com/*.gif
+khabarhub.com##div[class*="-ads"]
+
+! --- deshsanchar.com ---
+||assets.deshsanchar.com/*.gif$image
+||assets.deshsanchar.com/*/RoadBlock_*$image
+
+! --- ktmdainik.com ---
+||ktmdainik.com/*.gif$image
+
+! --- ekagaj.com ---
+||ekagaj.com/*.gif$image
+ekagaj.com##.wrapper-box
+
+! --- ukeraa.com ---
+||www.ukeraa.com/*.gif$image
+www.ukeraa.com##.paraAd
+
+! --- merokhel.com ---
+||merokhel.com/*.gif$image
+
+! --- koshionline.com ---
+||www.koshionline.com/wp-content/uploads/*.gif$image
+www.koshionline.com##.ad-sec
+
+! --- dainiki.com ---
+||dainiki.com/*.gif$image
+dainiki.com##div[class*="adsimage"]
+
+! --- sancharkendra.com ---
+||sancharkendra.com/wp-content/uploads/*.gif$image
+sancharkendra.com##.addb
+sancharkendra.com##.skada
+
+! --- hamrobazaar.com ---
+||hamrobazaar.com/sponsered/*$image
+||hamrobazaar.blr1.cdn.digitaloceanspaces.com/feature_ads/*$object
+hamrobazaar.com##.overlay
+hamrobazaar.com##.inBetweenAds
+hamrobazaar.com##.topBanner
+hamrobazaar.com##.mobInfeedGAds
+
+! --- bizmandu.com ---
+||bizmandu.com/assets/upload/*.gif$image
+||bizmandu.com/assets/upload/advertise/
+bizmandu.com##div[class*="-ad"]
+bizmandu.com##section.banner-bigyapan
+bizmandu.com##.bigyapan-inside-content
+bizmandu.com##.banner
+bizmandu.com###__roadblock__
+
+! --- bizkhabar.com ---
+||bizkhabar.com/*.gif$image
+
+! --- purbelinews.com ---
+purbelinews.com##div[class*="ads"]
+purbelinews.com##section[id^="widget_sp_image-"]
+
+! --- nagariknetwork.com ---
+||staticimg.nagariknetwork.com/uploads/medias/*.gif$image
+nagariknetwork.com##div[id*="adverts"]
+nagariknews.nagariknetwork.com##.m-0.show.fixed-bottom.fade.alert-light.alert-dismissible.alert
+
+! --- surakshyanews.com ---
+||www.surakshyanews.com/uploads/bigyapan/*$image
+
+! --- samadhannews.com ---
+||samadhannews.com/wp-content/uploads/*.gif$image
+
+! --- eadarsha.com ---
+||eadarsha.com/wp-content/*.gif$image
+
+! --- bankingkhabar.com ---
+||bankingkhabar.com/*.gif$image
+bankingkhabar.com##div[class*="add"]
+
+! --- arthasarokar.com ---
+||arthasarokar.com/*.gif$image
+arthasarokar.com##.custom-ad-link
+arthasarokar.com##.twin-ad-wrapper
+
+! --- kathmandukhabar.com ---
+||kathmandukhabar.com/uploads/advertisement/
+kathmandukhabar.com##div.banner.container:nth-of-type(4)
+
+! --- karobardaily.com ---
+||www.karobardaily.com/wp-content/uploads/*/*/*.gif$image
+www.karobardaily.com##.show.modal-load.fade.modal
+www.karobardaily.com##.show.fade.modal-backdrop
+www.karobardaily.com##div.col-md-12 > .mb-2 > section.widget
+www.karobardaily.com##div.mb-2:nth-of-type(2)
+www.karobardaily.com##div.mb-2:nth-of-type(4)
+www.karobardaily.com##.text-center > section.widget
+www.karobardaily.com##section.widget:nth-of-type(2)
+www.karobardaily.com##section.widget:nth-of-type(3)
+www.karobardaily.com##section.widget:nth-of-type(1)
+www.karobardaily.com##section.widget
+
+! --- nayapatrikadaily.com ---
+nayapatrikadaily.com##.details-advdesktop
+
+! --- arthikpage.com ---
+||arthikpage.com/wp-content/uploads/*.gif$image
+||onlinearthik.com/wp-content/uploads/*.gif$image
+arthikpage.com##.sidebar__ads
+arthikpage.com##div.banner__ads
+arthikpage.com##.top__header__ads
+
+! --- merolagani.com ---
+||images.merolagani.com//content/bigyapan/*$image
+
+! --- bizshala.com ---
+bizshala.com##.ad-banner-img
+
+! --- sharehubnepal.com ---
+! rm sharehub pro modal
+sharehubnepal.com##.z-50.bg-opacity-50.bg-black.justify-center.items-center.flex.h-full.w-full.left-0.top-0.fixed
+
+! --- ratopati.com ---
+! ratopati header
+calendar.ratopati.com##.site-header
