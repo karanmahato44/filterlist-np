@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
 ! Title: Nepali Adblock Filter
-! Description: Ad and tracker blocking filter for Nepali websites. Works with uBlock Origin, AdGuard, and Pi-hole.
-! Version: 1.0.0
-! Last modified: 2026-03-15
+! Description: Ad, tracker, and distraction blocking filter for Nepali websites and YouTube mobile. Works with uBlock Origin, AdGuard, and Pi-hole.
+! Version: 1.1.0
+! Last modified: 2026-07-13
 ! Expires: 7 days (update frequency)
 ! Homepage: https://github.com/karanmahato44/filterlist-np
 ! License: MIT
@@ -31,6 +31,50 @@
 ||*/bigyaapan/*$image
 
 ! ===== SITE-SPECIFIC RULES =====
+
+! --- m.youtube.com (distraction-free mobile) ---
+! Shorts selector reference: https://github.com/gijsdev/ublock-hide-yt-shorts (MIT, Copyright (c) 2022 Gijsdev)
+
+! Block direct Shorts pages and Shorts feed API requests
+||m.youtube.com/shorts/*$document
+||m.youtube.com/youtubei/v1/reel/*$xhr
+m.youtube.com##body.page-shorts
+
+! Hide Shorts navigation, tabs, filters, shelves, and cards
+m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+m.youtube.com##yt-tab-shape[tab-title="Shorts"]
+m.youtube.com##ytm-chip-cloud-chip-renderer:has([aria-label="Shorts"])
+m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##.big-shorts-singleton
+m.youtube.com##ytm-shorts-lockup-view-model:upward(ytm-rich-section-renderer)
+m.youtube.com##ytm-shorts-lockup-view-model:upward(grid-shelf-view-model)
+m.youtube.com##ytm-shorts-lockup-view-model-v2:upward(grid-shelf-view-model)
+m.youtube.com##:is(ytm-video-with-context-renderer,ytm-compact-video-renderer,ytm-rich-item-renderer,ytm-media-item):has(a[href^="/shorts/"])
+m.youtube.com##ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-video-with-context-renderer)
+m.youtube.com##ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-compact-video-renderer)
+m.youtube.com##ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-rich-item-renderer)
+m.youtube.com##a[href^="/shorts/"]
+
+! Hide Home recommendations while keeping search, subscriptions, and channels
+m.youtube.com##ytm-browse[page-subtype="home"]
+m.youtube.com##[tab-identifier="FEwhat_to_watch"] ytm-rich-grid-renderer
+
+! Hide Up next and related recommendations below videos
+m.youtube.com##ytm-item-section-renderer[section-identifier="related-items"]
+m.youtube.com##ytm-related-chip-cloud-renderer
+m.youtube.com##.related-chips-sentinel
+
+! Hide recommendation overlays, end screens, pause suggestions, and Next button
+m.youtube.com###player-endscreen-container
+m.youtube.com##.ytFullscreenVideoRecommendationsHost
+m.youtube.com##ytm-fullscreen-related-videos-entry-point-view-model
+m.youtube.com##.fullscreen-watch-next-entrypoint-wrapper
+m.youtube.com##.fullscreen-more-videos-endpoint
+m.youtube.com##.ytp-ce-element
+m.youtube.com##.ytp-endscreen-content
+m.youtube.com##.ytp-pause-overlay
+m.youtube.com##.fullscreen-recommendations-wrapper
+m.youtube.com##button[aria-label="Next video"]
 
 ! --- setopati.com ---
 www.setopati.com##.mast-head.col-md-12
