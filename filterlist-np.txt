@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
 ! Title: Nepali Adblock Filter
-! Description: Ad, tracker, and distraction blocking filter for Nepali websites and YouTube. Works with Adblock Plus-compatible browser blockers, including uBlock Origin, AdGuard, Brave, and Orion.
-! Version: 1.3.0
-! Last modified: 2026-07-13
+! Description: Ad, tracker, and distraction blocking filter for Nepali websites and YouTube mobile. Works with Adblock Plus-compatible browser blockers, including uBlock Origin, AdGuard, Brave, and Orion.
+! Version: 1.3.1
+! Last modified: 2026-07-15
 ! Expires: 7 days
 ! Homepage: https://github.com/karanmahato44/filterlist-np
 ! License: MIT
@@ -34,84 +34,84 @@
 
 ! ===== SITE-SPECIFIC RULES =====
 
-! --- youtube.com (distraction-free mobile and desktop-site mode) ---
+! --- m.youtube.com (mobile hostname only; www.youtube.com is unaffected) ---
 ! Shorts selector reference: https://github.com/gijsdev/ublock-hide-yt-shorts (MIT, Copyright (c) 2022 Gijsdev)
 ! Keep this section ABP/WebKit-safe for Orion iOS: standard network rules and CSS selectors only.
 
 ! Block direct Shorts pages and Shorts feed API requests
-||youtube.com/shorts/
-||youtube.com/youtubei/v1/reel/$xmlhttprequest
-youtube.com##body.page-shorts
-youtube.com##html[page-shorts]
-youtube.com###player-shorts-container
+||m.youtube.com/shorts/
+||m.youtube.com/youtubei/v1/reel/$xmlhttprequest
+m.youtube.com##body.page-shorts
+m.youtube.com##html[page-shorts]
+m.youtube.com###player-shorts-container
 
 ! Hide Shorts navigation, tabs, filters, shelves, and cards
-youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
-youtube.com##ytm-pivot-bar-item-renderer:has(a[href*="/shorts/"])
-youtube.com##.pivot-shorts
-youtube.com##yt-tab-shape[tab-title="Shorts"]
-youtube.com##ytm-chip-cloud-chip-renderer:has([aria-label="Shorts"])
-youtube.com##ytm-reel-shelf-renderer
-youtube.com##ytd-reel-shelf-renderer
-youtube.com##.big-shorts-singleton
-youtube.com##ytm-shorts-lockup-view-model
-youtube.com##ytm-shorts-lockup-view-model-v2
-youtube.com##ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model)
-youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model)
-youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2)
-youtube.com##ytm-video-with-context-renderer:has(a[href*="/shorts/"])
-youtube.com##ytm-compact-video-renderer:has(a[href*="/shorts/"])
-youtube.com##ytm-rich-item-renderer:has(a[href*="/shorts/"])
-youtube.com##ytm-media-item:has(a[href*="/shorts/"])
-youtube.com##ytm-video-with-context-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
-youtube.com##ytm-compact-video-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
-youtube.com##ytm-rich-item-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
-youtube.com##ytd-guide-entry-renderer:has(a[href*="/shorts/"])
-youtube.com##ytd-mini-guide-entry-renderer:has(a[href*="/shorts/"])
-youtube.com##ytd-video-renderer:has(a[href*="/shorts/"])
-youtube.com##ytd-grid-video-renderer:has(a[href*="/shorts/"])
-youtube.com##ytd-rich-item-renderer:has(a[href*="/shorts/"])
-youtube.com##a[href*="/shorts/"]
+m.youtube.com##ytm-pivot-bar-item-renderer:has(.pivot-shorts)
+m.youtube.com##ytm-pivot-bar-item-renderer:has(a[href*="/shorts/"])
+m.youtube.com##.pivot-shorts
+m.youtube.com##yt-tab-shape[tab-title="Shorts"]
+m.youtube.com##ytm-chip-cloud-chip-renderer:has([aria-label="Shorts"])
+m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##ytd-reel-shelf-renderer
+m.youtube.com##.big-shorts-singleton
+m.youtube.com##ytm-shorts-lockup-view-model
+m.youtube.com##ytm-shorts-lockup-view-model-v2
+m.youtube.com##ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model)
+m.youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model)
+m.youtube.com##grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2)
+m.youtube.com##ytm-video-with-context-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytm-compact-video-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytm-rich-item-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytm-media-item:has(a[href*="/shorts/"])
+m.youtube.com##ytm-video-with-context-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
+m.youtube.com##ytm-compact-video-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
+m.youtube.com##ytm-rich-item-renderer:has(ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"])
+m.youtube.com##ytd-guide-entry-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytd-mini-guide-entry-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytd-video-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytd-grid-video-renderer:has(a[href*="/shorts/"])
+m.youtube.com##ytd-rich-item-renderer:has(a[href*="/shorts/"])
+m.youtube.com##a[href*="/shorts/"]
 
 ! Hide Home recommendations while keeping search, subscriptions, and channels
-youtube.com##ytm-browse[page-subtype="home"]
-youtube.com##[tab-identifier="FEwhat_to_watch"] ytm-rich-grid-renderer
-youtube.com##ytd-browse[page-subtype="home"]
+m.youtube.com##ytm-browse[page-subtype="home"]
+m.youtube.com##[tab-identifier="FEwhat_to_watch"] ytm-rich-grid-renderer
+m.youtube.com##ytd-browse[page-subtype="home"]
 
 ! Make watch pages player-only: hide navigation, metadata, channel/actions, comments, and panels
-youtube.com##body:has(ytm-watch) ytm-mobile-topbar-renderer
-youtube.com##body:has(ytm-watch) ytm-pivot-bar-renderer
-youtube.com##ytm-watch .watch-below-the-player
-youtube.com##ytm-watch ytm-engagement-panel-renderer
-youtube.com##body:has(ytd-watch-flexy) ytd-masthead
-youtube.com##ytd-watch-flexy #below
-youtube.com##ytd-watch-flexy #secondary
-youtube.com##ytd-watch-flexy #chat
-youtube.com##ytd-watch-flexy ytd-engagement-panel-section-list-renderer
+m.youtube.com##body:has(ytm-watch) ytm-mobile-topbar-renderer
+m.youtube.com##body:has(ytm-watch) ytm-pivot-bar-renderer
+m.youtube.com##ytm-watch .watch-below-the-player
+m.youtube.com##ytm-watch ytm-engagement-panel-renderer
+m.youtube.com##body:has(ytd-watch-flexy) ytd-masthead
+m.youtube.com##ytd-watch-flexy #below
+m.youtube.com##ytd-watch-flexy #secondary
+m.youtube.com##ytd-watch-flexy #chat
+m.youtube.com##ytd-watch-flexy ytd-engagement-panel-section-list-renderer
 
 ! Hide Up next and related recommendations below videos
-youtube.com##ytm-item-section-renderer[section-identifier="related-items"]
-youtube.com##ytm-watch-next-secondary-results-renderer
-youtube.com##ytm-related-chip-cloud-renderer
-youtube.com##.related-chips-sentinel
-youtube.com##ytd-watch-next-secondary-results-renderer
-youtube.com###related
+m.youtube.com##ytm-item-section-renderer[section-identifier="related-items"]
+m.youtube.com##ytm-watch-next-secondary-results-renderer
+m.youtube.com##ytm-related-chip-cloud-renderer
+m.youtube.com##.related-chips-sentinel
+m.youtube.com##ytd-watch-next-secondary-results-renderer
+m.youtube.com###related
 
 ! Hide recommendation overlays, end screens, pause suggestions, and Next button
-youtube.com###player-endscreen-container
-youtube.com##.ytFullscreenVideoRecommendationsHost
-youtube.com##ytm-fullscreen-related-videos-entry-point-view-model
-youtube.com##.fullscreen-watch-next-entrypoint-wrapper
-youtube.com##.fullscreen-more-videos-endpoint
-youtube.com##.ytp-ce-element
-youtube.com##.ytp-endscreen-content
-youtube.com##.ytp-pause-overlay
-youtube.com##.fullscreen-recommendations-wrapper
-youtube.com##.ytp-next-button
-youtube.com##.ytp-autonav-endscreen-upnext-container
-youtube.com##.ytp-autonav-endscreen-upnext-button
-youtube.com##.ytp-autonav-endscreen-countdown-overlay
-youtube.com##button[aria-label="Next video"]
+m.youtube.com###player-endscreen-container
+m.youtube.com##.ytFullscreenVideoRecommendationsHost
+m.youtube.com##ytm-fullscreen-related-videos-entry-point-view-model
+m.youtube.com##.fullscreen-watch-next-entrypoint-wrapper
+m.youtube.com##.fullscreen-more-videos-endpoint
+m.youtube.com##.ytp-ce-element
+m.youtube.com##.ytp-endscreen-content
+m.youtube.com##.ytp-pause-overlay
+m.youtube.com##.fullscreen-recommendations-wrapper
+m.youtube.com##.ytp-next-button
+m.youtube.com##.ytp-autonav-endscreen-upnext-container
+m.youtube.com##.ytp-autonav-endscreen-upnext-button
+m.youtube.com##.ytp-autonav-endscreen-countdown-overlay
+m.youtube.com##button[aria-label="Next video"]
 
 ! --- setopati.com ---
 www.setopati.com##.mast-head.col-md-12
