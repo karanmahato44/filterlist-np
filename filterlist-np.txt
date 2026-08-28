@@ -354,3 +354,10 @@ sharehubnepal.com##.z-50.bg-opacity-50.bg-black.justify-center.items-center.flex
 ! --- ratopati.com ---
 ! ratopati header
 calendar.ratopati.com##.site-header
+
+! remove "get the app" popup
+www.reddit.com###app-upsell-blocking-bottom-sheet-seo
+www.reddit.com###app-upsell-blocking-bottom-sheet-direct
+www.reddit.com###xpromo-bottom-sheet
+! force scrolling to stay unlocked
+reddit.com##body,html:style(overflow: auto !important)
