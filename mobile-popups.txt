@@ -1,0 +1,89 @@
+[Adblock Plus 2.0]
+! Title: Mobile Popup Protection
+! Description: Blocks known popup/popunder scripts and ad networks across websites. Install on mobile only; does not disable the browser's new-tab API.
+! Version: 1.0.0
+! Last modified: 2026-09-19
+! Expires: 1 day
+! Homepage: https://github.com/karanmahato44/filterlist-np
+! License: MIT
+!
+! Separate subscription: add this list ONLY on your iPhone/mobile browsers.
+! Keep filterlist-np.txt subscribed for the existing site and mobile YouTube rules.
+! URL: https://raw.githubusercontent.com/karanmahato44/filterlist-np/refs/heads/main/mobile-popups.txt
+! Orion iOS: Settings > Content Blockers > Manage > Add New; then Update Now.
+! These rules do not detect devices. Subscribing on desktop applies them there too.
+!
+! LIMIT: Native WebKit lists cannot intercept window.open or require permission for new tabs.
+! Blocking the source script can prevent a popup; blocking its destination may leave a blank tab.
+! No global $popup, $document, scriptlet, or JavaScript-disable rule: these cannot provide
+! universal popup prevention in Orion and broad blocking would break normal navigation.
+! Reference: https://help.kagi.com/orion/features/custom-blocklists.html
+! Reference: https://github.com/AdguardTeam/SafariConverterLib#supported-rules-and-limitations
+
+! ===== POPUP LOADERS OBSERVED ON YESHD.NET (2026-09-19) =====
+! Apply across sites. The inline popundersPerIP loader retries four external sources.
+! Block each source, including its dedicated CloudFront path (not all of CloudFront).
+||xadsmart.com^
+||axswhgkytfd.com^
+||oqhbgxvk.com^
+||d11enq2rymy0yl.cloudfront.net/aNKxP/$script
+! Separate Galaksion loader injected by the page.
+||syriacgrumose.com^
+
+! ===== KNOWN POPUP / CLICKUNDER AD NETWORKS (ALL SITES) =====
+! Domain classification checked against EasyList on 2026-09-19:
+! https://github.com/easylist/easylist/blob/master/easylist/easylist_adservers.txt
+! Supplements the browser's maintained EasyList/AdGuard lists; does not replace them.
+||ad-maven.com^
+||adsterraserver.com^
+||clickadu.net^
+||getpopunder.com^
+||highperformanceformat.com^
+||highperformancegate.com^
+||hilltopads.net^
+||monetag.com^
+||onclckbn.net^
+||onclckbnr.com^
+||onclckinp.com^
+||onclckinpg.com^
+||onclckip.com^
+||onclckmetrics.com^
+||onclckmn.com^
+||onclcktg.com^
+||onclckvd.com^
+||onclickads.net^
+||onclickalgo.com^
+||onclickclear.com^
+||onclickgenius.com^
+||onclickmax.com^
+||onclickmega.com^
+||onclickperformance.com^
+||onclickprediction.com^
+||onclickpredictiv.com^
+||onclickpulse.com^
+||onclicksuper.com^
+||popads.media^
+||popads.net^
+||popcash.net^
+||profitablecpmgate.com^
+||profitablegate.com^
+||profitablegatecpm.com^
+||propellerads.com^
+||propellerads.tech^
+||toprevenuegate.com^
+
+! ===== KNOWN POPUNDER SCRIPT PATHS (FIRST- AND THIRD-PARTY) =====
+! Match script requests only, including copies hosted on the visited website.
+! Reference: https://github.com/easylist/easylist/blob/master/easylist/easylist_general_block.txt
+/jquery.popunder.js^$script
+/jspopunder.js^$script
+/jspopunder.min.js^$script
+/js/popunder.js^$script
+/popunder1.js^$script
+/popunder1000.js^$script
+/plugins/popunderpro/*$script
+/plugins/ultimate-popunder/*$script
+! PopAds fallback filenames observed on yeshd.net; two masquerade as stylesheets.
+/uradian.min.css^$script
+/hradian.min.css^$script
+/zxml2json.min.js^$script
