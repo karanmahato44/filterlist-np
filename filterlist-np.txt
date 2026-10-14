@@ -1,8 +1,8 @@
 [Adblock Plus 2.0]
 ! Title: Nepali Adblock Filter
 ! Description: Ad, tracker, and distraction blocking filter for Nepali websites and YouTube mobile. Works with Adblock Plus-compatible browser blockers, including uBlock Origin, AdGuard, Brave, and Orion.
-! Version: 1.3.1
-! Last modified: 2026-07-15
+! Version: 1.3.3
+! Last modified: 2026-10-14
 ! Expires: 7 days
 ! Homepage: https://github.com/karanmahato44/filterlist-np
 ! License: MIT
@@ -37,6 +37,12 @@
 ! --- m.youtube.com (mobile hostname only; www.youtube.com is unaffected) ---
 ! Shorts selector reference: https://github.com/gijsdev/ublock-hide-yt-shorts (MIT, Copyright (c) 2022 Gijsdev)
 ! Keep this section ABP/WebKit-safe for Orion iOS: standard network rules and CSS selectors only.
+
+! Video previews: do not hide the shared player or block animated thumbnails;
+! YouTube can hide the static thumbnail during playback, leaving a black card.
+! Turn off Settings > General > Video previews instead. Orion filter lists
+! cannot set that preference (no snippet support):
+! https://help.kagi.com/orion/features/custom-blocklists.html
 
 ! Block direct Shorts pages and Shorts feed API requests
 ||m.youtube.com/shorts/

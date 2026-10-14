@@ -20,7 +20,6 @@
 ! Reference: https://help.kagi.com/orion/features/custom-blocklists.html
 ! Reference: https://github.com/AdguardTeam/SafariConverterLib#supported-rules-and-limitations
 
-! ===== POPUP LOADERS OBSERVED ON YESHD.NET (2026-09-19) =====
 ! Apply across sites. The inline popundersPerIP loader retries four external sources.
 ! Block each source, including its dedicated CloudFront path (not all of CloudFront).
 ||xadsmart.com^
@@ -83,7 +82,6 @@
 /popunder1000.js^$script
 /plugins/popunderpro/*$script
 /plugins/ultimate-popunder/*$script
-! PopAds fallback filenames observed on yeshd.net; two masquerade as stylesheets.
 /uradian.min.css^$script
 /hradian.min.css^$script
 /zxml2json.min.js^$script
